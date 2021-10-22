@@ -50,7 +50,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s2[y] != '\0')
 		ptr[x++] = s2[y++];
 	ptr[x] = '\0';
-	free (ptr);
+	free (s1);
 	return (ptr);
 }
 
@@ -60,7 +60,7 @@ char	*ft_strchr(char *str, char c)
 
 	i = 0;
 	if (!str)
-		return (0);
+		return (NULL);
 	if (c == '\0')
 		return ((char *)&str[i]);
 	while (str[i] != '\0')
@@ -83,6 +83,8 @@ char	*ft_get_line(char *s)
 	while (s[i] != '\n')
 		i++;
 	str = malloc((sizeof(char)) * i + 2);
+	if (!str)
+		return (NULL);
 	i = 0;
 	while (s[i] != '\n')
 	{
@@ -110,6 +112,6 @@ char	*ft_save_str(char *full_str)
 	while (full_str[i] != '\0')
 		save_str[j++] = full_str[i++];
 	save_str[j] = '\0';
-	free(save_str);
+	//free(save_str);
 	return (save_str);
 }
