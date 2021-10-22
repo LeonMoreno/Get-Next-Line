@@ -15,4 +15,13 @@ int main(void)
 	line = get_next_line(fd);
 	printf("\n---------MAiN---------\n\n");
 	printf("%s\n\n", line);
+	line = get_next_line(fd);
+	printf("\n---------MAiN---------\n\n");
+	printf("%s\n\n", line);
+	line = get_next_line(fd);
+	printf("\n---------MAiN---------\n\n");
+	printf("%s\n\n", line);
+	line = get_next_line(fd);
+	printf("\n---------MAiN---------\n\n");
+	printf("%s\n\n", line);
 }

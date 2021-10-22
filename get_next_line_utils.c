@@ -1,30 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/21 17:43:04 by LeoMoreno         #+#    #+#             */
+/*   Updated: 2021/10/21 18:30:21 by LeoMoreno        ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 
-int ft_strlen(char *s1)
+int	ft_strlen(char *s1)
 {
-	int i;
+	size_t	i;
 
 	i = 0;
+	if (!s1)
+		return (0);
 	while (s1[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }
 
-char *ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	int x, y;
-	char *ptr;
+	int		x;
+	int		y;
+	char	*ptr;
 
 	x = 0;
 	y = 0;
-
 	if (!s1)
 	{
-		s1 = malloc(sizeof(char *));
-		if(!s1)
-			return (NULL);
+		s1 = malloc(sizeof(char));
 		s1[0] = '\0';
 	}
+	if (!s1)
+		return (NULL);
 	ptr = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!ptr)
 		return (NULL);
@@ -33,42 +47,42 @@ char *ft_strjoin(char *s1, char *s2)
 		ptr[x] = s1[x];
 		x++;
 	}
-	while(s2[y] != '\0')
-		ptr[x++]  = s2[y++];
+	while (s2[y] != '\0')
+		ptr[x++] = s2[y++];
 	ptr[x] = '\0';
-	free(s1);
+	free (ptr);
 	return (ptr);
 }
 
-char *ft_strchr(char *str, char c)
+char	*ft_strchr(char *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
-		return (NULL);
+		return (0);
+	if (c == '\0')
+		return ((char *)&str[i]);
 	while (str[i] != '\0')
 	{
 		if (str[i] == c)
 			return ((char *)&str[i]);
-		//printf("Aqui TOu\n");
 		i++;
 	}
-	if (c == '\0' && str[i] == c)
-		return ((char *)&str[i]);
 	return (0);
 }
 
-char *ft_get_line(char *s)
+char	*ft_get_line(char *s)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
+	i = 0;
 	if (!s)
 		return (NULL);
 	while (s[i] != '\n')
 		i++;
-	str = malloc((sizeof(char)) * i + 1);
+	str = malloc((sizeof(char)) * i + 2);
 	i = 0;
 	while (s[i] != '\n')
 	{
@@ -79,12 +93,12 @@ char *ft_get_line(char *s)
 	return (str);
 }
 
-char *ft_save_str(char *full_str)
+char	*ft_save_str(char *full_str)
 {
-	char *save_str;
-	int i;
-	int j;
-	
+	char	*save_str;
+	int		i;
+	int		j;
+
 	i = 0;
 	j = 0;
 	while (full_str[i] != '\n')
@@ -96,6 +110,6 @@ char *ft_save_str(char *full_str)
 	while (full_str[i] != '\0')
 		save_str[j++] = full_str[i++];
 	save_str[j] = '\0';
+	free(save_str);
 	return (save_str);
 }
-
