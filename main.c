@@ -3,25 +3,27 @@
 int main(void)
 {
 	int fd;
-	char *line;
+	char *str;
 
 	fd = open("prueba.txt", O_RDONLY);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
-	line = get_next_line(fd);
-	printf("\n---------MAiN---------\n\n");
-	printf("%s\n\n", line);
+//	do
+//	{
+		str = get_next_line(fd);
+		puts("-----Main------------");
+		printf("%s\n", str);
+		str = get_next_line(fd);
+		puts("-----Main------------");
+		printf("%s\n", str);
+		str = get_next_line(fd);
+		puts("-----Main------------");
+		printf("%s\n", str);
+		str = get_next_line(fd);
+		puts("-----Main------------");
+		printf("%s\n", str);
+		str = get_next_line(fd);
+		puts("-----Main------------");
+		printf("%s\n", str);
+//	} while(str != NULL);
+	return (0);
 }
+

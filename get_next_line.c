@@ -1,52 +1,38 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/21 17:41:14 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/21 18:17:01 by LeoMoreno        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "get_next_line.h"
 
-char	*read_line(int fd, char *str_join)
+char *ft_read_buff(int fd, char *save_buff)
 {
+	int		read_bytes;
 	char	*buff;
-	int		bytes_lu;
 
-	buff = malloc(sizeof(*buff) * BUFFER_SIZE + 1);
+	buff = malloc(sizeof(*buff));
 	if (!buff)
 		return (NULL);
-	bytes_lu = 1;
-	while (!ft_strchr(str_join, '\n') && bytes_lu != 0)
+	read_bytes = 1;
+	while (!ft_strchr(save_buff, '\n') && read_bytes != 0)
 	{
-		bytes_lu = read(fd, buff, BUFFER_SIZE);
-		if (bytes_lu == -1)
+		read_bytes = read(fd, buff, BUFFER_SIZE);
+		if (read_bytes == -1)
 		{
 			free(buff);
 			return (NULL);
 		}
-		buff[bytes_lu] = '\0';
-		str_join = ft_strjoin(str_join, buff);
+		buff[read_bytes] = '\0';
+		printf("Buffer leido %d : %s\n", read_bytes, buff);
+		save_buff = ft_strjoin(save_buff, buff);
 	}
-	free (buff);
-	return (str_join);
+	if (read_bytes == 0)
+		return (NULL);
+	return (save_buff);
 }
 
 char	*get_next_line(int fd)
 {
-	static char	*line_lu;
-	char		*line;
-	
+	static char	*full_buff;
+
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);	
-	line_lu = read_line(fd, line_lu);
-	if (!line_lu)
-		return (NULL);
-	line = ft_get_line(line_lu);
-	line_lu = ft_save_str(line_lu);
-	return (line);
+		return (0);
+	full_buff = ft_read_buff(fd, full_buff);
+	printf("Full Buff leido %s\n", full_buff);
+	return (full_buff);
 }

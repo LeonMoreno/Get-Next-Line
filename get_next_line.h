@@ -4,15 +4,16 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <unistd.h>
-# define BUFFER_SIZE 10
+# define BUFFER_SIZE 1000
 
 /* Funciones getNextLine */
 char *get_next_line(int fd);
-char *read_line(int fd, char *str_join);
+char *read_buff(int fd, char *save_buff);
 
 /* Funciones Extras */
-char *ft_strjoin(char *s1, char *s2);
-char *ft_strchr(char *s1, char c);
+int ft_strlen(char *str);
+char *ft_strjoin(char *save_buff, char *buff);
+char *ft_strchr(char *save_buff, char c);
 char *ft_get_line(char *s);
 char *ft_save_str(char *save_str);
 
