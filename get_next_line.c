@@ -13,6 +13,8 @@ char *read_line(int fd, char *str_join)
 	while (!ft_strchr(str_join, '\n') && bytes_lu != 0)
 	//while (bytes_lu != 0)
 	{
+		//if (bytes_lu == -1)
+		//	free(buff);
 		bytes_lu = read(fd, buff, BUFFER_SIZE);
 		buff[bytes_lu] = '\0';
 		printf("size_buff = %d, buff = %s\n", bytes_lu, buff);
