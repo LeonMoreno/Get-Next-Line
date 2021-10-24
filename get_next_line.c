@@ -1,40 +1,38 @@
 #include "get_next_line.h"
 
-char *ft_read_buff(int fd, char *save_buff)
+char	*get_next_line(int fd)
 {
-	int		read_bytes;
-	char	*buff;
+	char		*line;
+	static char	*save_buff;
 
-	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!fd || !BUFFER_SIZE)
+		return (0);
+	save_buff = ft_read_buff(fd, save_buff);
+	line = ft_get_line(save_buff);
+	save_buff = ft_next_save (save_buff);
+	return (line);
+}
+
+char	*ft_read_buff(int fd, char *save_buff)
+{
+	char	*buff;
+	int		byt_read;
+
+	buff = malloc(sizeof(*buff) * BUFFER_SIZE + 1);
 	if (!buff)
 		return (NULL);
-	read_bytes = 1;
-	while (!ft_strchr(save_buff, '\n') && read_bytes != 0)
+	byt_read = 1;
+	while (!ft_strchr(save_buff, '\n') && byt_read != 0)
 	{
-		read_bytes = read(fd, buff, BUFFER_SIZE);
-		if (read_bytes == -1)
+		byt_read = read(fd, buff, BUFFER_SIZE);
+		buff[byt_read] = '\0';
+		if (byt_read == -1)
 		{
 			free(buff);
 			return (NULL);
 		}
-		buff[read_bytes] = '\0';
-		save_buff = ft_strjoin(save_buff, buff);
+		save_buff = ft_strjoin(save_buff, buff);;
 	}
-	free(buff);
+	free (buff);
 	return (save_buff);
-}
-
-char	*get_next_line(int fd)
-{
-	static char	*full_buff;
-	char		*line;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (0);
-	full_buff = ft_read_buff(fd, full_buff);
-	if (!full_buff)
-		return (NULL);
-	line = ft_get_line(full_buff);
-	full_buff = ft_next_save(full_buff);
-	return (line);
 }

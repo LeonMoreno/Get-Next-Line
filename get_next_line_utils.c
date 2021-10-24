@@ -2,119 +2,113 @@
 
 int ft_strlen(char *str)
 {
-	size_t i;
-
-	i = 0;
+	int i;
+	
 	if (!str)
 		return (0);
+	i = 0;
 	while (str[i] != '\0')
 		i++;
 	return (i);
 }
 
-int ft_strchr(char *save_buff, int c)
+int ft_strchr(char *str, char c)
 {
 	int i;
-
-	i = 0;
-	if (!save_buff)
+	
+	i = 0;	
+	if (!str)
 		return (0);
-	while (save_buff[i] != '\0')
+	while (str[i] != '\0')
 	{
-		if (save_buff[i] == (char)c)
+		if (str[i] == c)
 			return (1);
-			//return ((char *)&save_buff[i]);
 		i++;
 	}
 	return (0);
 }
 
-char *ft_strjoin(char *s1, char *buff)
+char *ft_strjoin(char *save_buff, char *buff)
 {
 	int i;
 	int j;
 	char *s_join;
 
 	i = 0;
-	j = 0;
-	if (!s1)
+	if (!save_buff)
 	{
-		s1 = malloc(sizeof(*s1));
-		s1[0] = '\0';
-	} 
-	if (!s1 || !buff)
+		save_buff = (char *) malloc(sizeof(*save_buff));
+		save_buff[0] = '\0';
+	}
+	if (!save_buff || !buff)
 		return (NULL);
-	s_join = malloc(sizeof(*s_join) * (ft_strlen(s1) + ft_strlen(buff) + 1));
-	if (s_join == NULL)
+	s_join = (char *) malloc(sizeof(*s_join) * (ft_strlen(save_buff) + ft_strlen(buff) + 1));
+	if (!s_join)
 		return (NULL);
-	if (s1)
-		while (s1[i] != '\0')
-		{
-			s_join[i] = s1[i];
-			i++;
-		}
+	while (save_buff[i] != '\0')
+	{
+		s_join[i] = save_buff[i];
+		i++;
+	}
+	j = 0;
 	while (buff[j] != '\0')
-		s_join[i++] = buff[j++];
-	//s_join[ft_strlen(s1) + ft_strlen(buff)] = '\0';
-	s_join[j] = '\0';
-	free (s1);
+	{
+		s_join[i] = buff[j];
+		j++;
+		i++;
+	}
+	s_join[i] = '\0';
+	free (save_buff);
 	return (s_join);
 }
 
-char *ft_get_line(char *line)
+char *ft_get_line(char *s)
 {
-	char *str;
 	int i;
+	char *sole_line;
 
 	i = 0;
-	printf("FT_GET_LINE: %d\n", line[0]);
-	if (!line)
-		printf("NOLine %d\n", ft_strlen(line));
-	else
-		printf("SILine %d \n", ft_strlen(line));
-	if (!line[i])
+	if (!s[i])
 		return (NULL);
-	while (line[i] != '\n')
+	while (s[i] != '\n')
 		i++;
-	str = malloc(sizeof(char) * (i + 2));
-	if (!str)
+	sole_line = (char *) malloc(sizeof(*s) * i + 2);
+	if (!sole_line)
 		return (NULL);
 	i = 0;
-	while (line[i] && line[i] != '\n')
+	while (s[i] != '\n')
 	{
-		str[i] = line[i];
+		sole_line[i] = s[i];
 		i++;
 	}
-	if (line[i] == '\n')
-	{
-		str[i] = line[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	if (s[i] == '\n')
+		sole_line[i] = '\n';
+	sole_line[++i] = '\0';
+	return (sole_line);
 }
 
 char *ft_next_save(char *full_buff)
 {
-	int i;
-	int j;
-	char *str;
+	int 	i;
+	char	*str;
+	int		j;
 
 	i = 0;
+	if (!full_buff[i])
+		return (NULL);
 	while (full_buff[i] != '\n')
 		i++;
-	if (!full_buff[i])
-	{
-		free(full_buff);
-		return (NULL);
-	}
-	str = malloc(sizeof(char) * (ft_strlen(full_buff) - i + 1));
-	if(!str)
+	str = (char *) malloc(sizeof(*str) * (ft_strlen(full_buff) - i) + 1);
+	if (!str)
 		return (NULL);
 	i++;
 	j = 0;
 	while (full_buff[i] != '\0')
-		str[j++] = full_buff[i++];
+	{
+		str[j] = full_buff[i];
+		i++;
+		j++;
+	}
 	str[j] = '\0';
 	free(full_buff);
 	return (str);
