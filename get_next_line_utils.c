@@ -42,7 +42,7 @@ char *ft_strjoin(char *save_buff, char *buff)
 	}
 	if (!save_buff || !buff)
 		return (NULL);
-	s_join = malloc(sizeof(char) * (ft_strlen(save_buff) + ft_strlen(buff) + 2));
+	s_join = (char *) malloc(sizeof(char) * (ft_strlen(save_buff) + ft_strlen(buff) + 1));
 	if (!s_join)
 		return (NULL);
 	while (save_buff[i] && save_buff[i] != '\0')
@@ -57,7 +57,7 @@ char *ft_strjoin(char *save_buff, char *buff)
 		j++;
 		i++;
 	}
-	s_join[++i] = '\0';
+	s_join[i] = '\0';
 	free (save_buff);
 	return (s_join);
 }
@@ -83,11 +83,12 @@ char *ft_get_line(char *s)
 		sole_line[i] = s[i];
 		i++;
 	}
-		printf("i = %d\n", i);
-	//if (s[i] == '\n')
-	sole_line[++i] = '\n';
-	sole_line[++i] = '\0';
-	printf("GetLine22: i = %d  %s\n", i, sole_line);
+	if (s[i] == '\n')
+	{
+		sole_line[i] = s[i];
+		i++;
+	}
+	sole_line[i] = '\0';
 	return (sole_line);
 }
 
@@ -98,13 +99,13 @@ char *ft_next_save(char *full_buff)
 	int		j;
 
 	i = 0;
-	if (!full_buff[i])
-		return (NULL);
-	while (full_buff[i] != '\n')
-	{	
+	while (full_buff[i] && full_buff[i] != '\n')
 		i++;
+	if (!full_buff[i])
+	{
+		free(full_buff);
+		return (NULL);
 	}
-	printf("NextSave: i = %d  %s\n", i, full_buff);
 	str = (char *) malloc(sizeof(*str) * (ft_strlen(full_buff) - i) + 1);
 	if (!str)
 		return (NULL);
