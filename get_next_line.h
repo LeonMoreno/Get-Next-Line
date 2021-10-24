@@ -11,7 +11,7 @@
 
 /* Funciones getNextLine */
 char *get_next_line(int fd);
-char *ft_read_buff(int fd, char *save_buff);
+char *ft_read_buff(size_t fd, char *save_buff);
 
 /* Funciones Extras */
 int ft_strlen(char *str);
