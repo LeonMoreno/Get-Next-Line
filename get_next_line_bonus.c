@@ -6,24 +6,24 @@
 /*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:32:02 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/25 17:28:29 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2021/10/25 17:57:18 by LeoMoreno        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"get_next_line.h"
+#include	"get_next_line_bonus.h"
 
 char	*get_next_line(int fd)
 {
-	static char	*save_buff;
+	static char	*save_buff[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	save_buff = ft_read_buff(fd, save_buff);
-	if (!save_buff)
+	save_buff[fd] = ft_read_buff(fd, save_buff[fd]);
+	if (!save_buff[fd])
 		return (NULL);
-	line = ft_get_line(save_buff);
-	save_buff = ft_next_save(save_buff);
+	line = ft_get_line(save_buff[fd]);
+	save_buff[fd] = ft_next_save(save_buff[fd]);
 	return (line);
 }
 

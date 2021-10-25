@@ -6,11 +6,11 @@
 /*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:32:31 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/25 17:28:26 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2021/10/25 18:35:51 by LeoMoreno        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	ft_strlen(char *str)
 {
@@ -103,6 +103,7 @@ char	*ft_next_save(char *full_buff)
 	char	*str;
 
 	i = 0;
+	j = 0;
 	while (full_buff[i] && full_buff[i] != '\n')
 		i++;
 	if (!full_buff[i])
@@ -114,7 +115,6 @@ char	*ft_next_save(char *full_buff)
 	if (!str)
 		return (NULL);
 	i++;
-	j = 0;
 	while (full_buff[i] != '\0')
 		str[j++] = full_buff[i++];
 	str[j] = '\0';
