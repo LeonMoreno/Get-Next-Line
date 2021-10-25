@@ -3,15 +3,14 @@
 int main(void)
 {
 	int fd;
-	char *str;
+	char *res;
 
-	fd = open("gnlTester/files/42_no_nl", O_RDONLY);
-//	fd = open("prueba.txt", O_RDONLY);
-	printf("%d\n", fd);
+
+	fd = open("prueba.txt", O_RDONLY);
 	do
 	{
-		str = get_next_line(fd);
-		printf("---MaIN----\n");
-		printf("%s\n", str);
-	}while (str);
+		res = get_next_line(fd);
+		printf("---main--\n");
+		printf("%s\n", res);
+	}while(res);
 }
