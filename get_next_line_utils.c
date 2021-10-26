@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: Leon.M <lmoreno@student.42quebec.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:32:31 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/25 17:28:26 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2021/10/26 10:59:49 by Leon.M           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
