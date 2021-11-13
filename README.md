@@ -3,11 +3,11 @@
 </h1>
 
 <p align="center">
-	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/LeonMoreno/42-libft?color=lightblue" />
-	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/LeonMoreno/42-libft?color=critical" />
-	<img alt="Code language count" src="https://img.shields.io/github/languages/count/LeonMoreno/42-libft?color=yellow" />
-	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/LeonMoreno/42-libft?color=blue" />
-	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LeonMoreno/42-libft?color=green" />
+	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/LeonMoreno/Get-Next-Line?color=lightblue" />
+	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/LeonMoreno/Get-Next-Line?color=critical" />
+	<img alt="Code language count" src="https://img.shields.io/github/languages/count/LeonMoreno/Get-Next-Line?color=yellow" />
+	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/LeonMoreno/Get-Next-Line?color=blue" />
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LeonMoreno/Get-Next-Line?color=green" />
 </p>
 
 
@@ -18,7 +18,8 @@
 ## Key points:
 * Learn a highly interesting new concept in C programming: static variables.
 * C Advanced Pointers.
-* POSIX-compliant operating systems.
+* system calls in C.
+* Unix logic.
 * Memory management anomalies in C.
 
 
@@ -28,8 +29,9 @@
 
 
 ## Skills:
-
-
+* Unix
+* Rigor
+* Algorithms & AI
 
 ## List of functions:
 
