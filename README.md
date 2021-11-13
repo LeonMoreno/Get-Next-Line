@@ -12,16 +12,19 @@
 
 
 ## 💡 About the project
-> _The aim of this project is to make you code a function that returns a line, read from a file descriptor._
 
-	🚀 TLDR: this project consists of coding a function that returns one line at a time from a text file.
+	🚀 TLDR: The aim of this project is to make you code a function that returns a line, read from a file descriptor.
 
 ## Key points:
-
+* Learn a highly interesting new concept in C programming: static variables.
+* C Advanced Pointers.
+* POSIX-compliant operating systems.
+* Memory management anomalies in C.
 
 
 ## Objectives:
-
+* Read the text available on the file descriptor one line at a time until the end of it.
+* Return the line that has just been read. If there is nothing else to read or if an error has occurred it should return NULL
 
 
 ## Skills:
