@@ -51,6 +51,8 @@ When compiling your code, add the source files and the required flag:
 gcc get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=size
 
 ## Screenshots
+
 Testing the GNL:
-<img src="resources/gnl.png" width="400" />
+
+<img src="img/gnl.png" width="800" />
 
