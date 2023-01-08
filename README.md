@@ -34,13 +34,6 @@
 * Rigor
 * Algorithms & AI
 
-## List of functions:
-
-### Functions from `<ctype.h>` library
-
-* [`ft_isascii`](/src/ft_is//ft_isascii.c)		- test for ASCII character.
-
-
 
 ## 🛠️ Usage
 
@@ -50,33 +43,6 @@ The library is written in C language and needs the **`gcc` compiler** and some s
 
 ### Instructions
 
-**1. Compiling the library**
+When compiling your code, add the source files and the required flag:
 
- Commande       	|  Actions 	|
-|----------------	|----------	|
-| `make`      	  | Compile les .c et créer libft.a  	|
-| `make clean`    | Supprime les .o.  	|
-| `make flcean`  	| Supprime les .o et libft.a.  	|
-| `make re`     	| Exécute fclean et make.  	|
-| `make bonus`          | For bonus functions.        |
-| `make norm`          | Verification with the norminettes. |
-
-
-**2. Using it in your code**
-
-To use the library functions in your code, simply include its header:
-
-```C
-#include "libft.h"
-```
-
-`gcc [main] libft.a && ./a.out` | Compile a main with the library, and then execute the program.
-
-
-## 📋 Third-party testers
-
-You can use any of this third party testers to test the project
-
-* [Tripouille/libfTester](https://github.com/Tripouille/libftTester)
-* [ska42/libft-war-machine](https://github.com/ska42/libft-war-machine)
-* [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
+gcc get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=size
