@@ -3,17 +3,18 @@
 </h1>
 
 <p align="center">
-	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/LeonMoreno/Get-Next-Line?color=lightblue" />
-	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/LeonMoreno/Get-Next-Line?color=critical" />
-	<img alt="Code language count" src="https://img.shields.io/github/languages/count/LeonMoreno/Get-Next-Line?color=yellow" />
-	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/LeonMoreno/Get-Next-Line?color=blue" />
-	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LeonMoreno/Get-Next-Line?color=green" />
+	<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/LeonMoreno/Get-Next-Line?color=yellow">
+	<img alt="Number of lines of code" src="https://img.shields.io/tokei/lines/github/LeonMoreno/Get-Next-Line?color=critical"/>
+	<img alt="Code language count" src="https://img.shields.io/github/languages/count/LeonMoreno/Get-Next-Line?color=yellow"/>
+	<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/LeonMoreno/Get-Next-Line?color=blue"/>
+	<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LeonMoreno/Get-Next-Line?color=green"/>
 </p>
 
 
 ## 💡 About the project
 
-	🚀 TLDR: The aim of this project is to make you code a function that returns a line, read from a file descriptor.
+	🚀 TLDR: The aim of this project is to make you code a function that returns a line,
+	read from a file descriptor.
 
 ## Key points:
 * Learn a highly interesting new concept in C programming: static variables.
