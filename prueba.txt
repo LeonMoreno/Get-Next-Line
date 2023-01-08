@@ -1,5 +1,0 @@
-1ERA, Hola mi leo, este es un pequeno ensayo
-2DA, Aqui estoy conlocando la segunda linea
-3RA, y esta es la tercera, pues me olvide hacerle una proteccion a mi archivo
-4TA, Pero bueno. aqui ya va. esta es la 4ta
-5TA, Leon.
