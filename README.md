@@ -27,7 +27,7 @@ Testing the GNL Manual:
 
 Testing the GNl with  Tripouille / gnlTester 
 
-<img src="img/gnl_test.png" width="800" />
+<img src="img/gnl_test.png" width="800"/>
 
 ## Key points:
 * Learn a highly interesting new concept in C programming: static variables.
