@@ -19,6 +19,13 @@
 	a way to read content line by line. It is time to start working on this function, 
 	which will be essential for your future projects. 
 
+## Screenshots
+
+Testing the GNL:
+
+<img src="img/gnl.png" width="800" />
+
+
 ## Key points:
 * Learn a highly interesting new concept in C programming: static variables.
 * C Advanced Pointers.
@@ -49,10 +56,3 @@ The library is written in C language and needs the **`gcc` compiler** and some s
 When compiling your code, add the source files and the required flag:
 
 gcc get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=size
-
-## Screenshots
-
-Testing the GNL:
-
-<img src="img/gnl.png" width="800" />
-
