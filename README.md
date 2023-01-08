@@ -52,4 +52,5 @@ gcc get_next_line.c get_next_line_utils.c -D BUFFER_SIZE=size
 
 ## Screenshots
 Testing the GNL:
+<img src="resources/gnl_img.png" width="400" />
 
