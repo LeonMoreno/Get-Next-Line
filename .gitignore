@@ -19,9 +19,6 @@ node_modules
 # Ejecutables .out
 *.out
 
-# Ejecutables .gnl
-*.gnl
-
 #Temp Files
 *.swp
 
