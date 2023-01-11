@@ -25,7 +25,7 @@ Testing the GNL Manual:
 
 <img src="img/gnl.png" width="800"/>
 
-Testing the GNl with  Tripouille / gnlTester 
+Testing the GNL with  Tripouille / gnlTester 
 
 <img src="img/gnl_test.png" width="800"/>
 
